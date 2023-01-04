@@ -1,0 +1,16 @@
+# action.yml
+name: 'Odoo.sh Shell'
+description: 'Execute shell script on odoo.sh instance'
+author: "David Halgand"
+inputs:
+  script:
+    description: 'Odoo shell script'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.script }}
+branding:
+  icon: 'settings'
+  color: 'blue'
